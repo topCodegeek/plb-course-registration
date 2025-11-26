@@ -1,0 +1,17 @@
+CC = gcc
+CFLAGS = -Iinclude -O2 -Wall
+SRC = src/main.c src/fileio.c src/admin.c src/student.c
+OBJ = $(SRC:.c=.o)
+BIN = bin/course_reg
+
+all: $(BIN)
+
+$(BIN): $(OBJ)
+	mkdir -p bin
+	$(CC) $(CFLAGS) -o $@ $(OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f src/*.o $(BIN)
