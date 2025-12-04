@@ -21,7 +21,7 @@ int main(){
         if(ch==1){
             printf("\nAdmin: \n1) Add Student \n2) Add Course \n3) List \n0) Back. \nYour choice: ");
             int a; scanf("%d",&a); getchar();
-            rintf("\n");
+            printf("\n");
             if(a==1) admin_add_student();
             else if(a==2) admin_add_course();
             else if(a==3) admin_list_all();
